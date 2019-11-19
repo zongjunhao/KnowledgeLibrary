@@ -1,0 +1,117 @@
+
+2019-07-14 09:32:44
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-07-15 20:00:01
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-07-19 10:44:31
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-07-19 14:11:38
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-07-20 20:00:26
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-07-21 14:40:44
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-09-03 15:58:41
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-09-03 15:59:14
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)
+
+2019-09-03 16:06:02
+[WARN]-[Thread: main]-[com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>()]: Cannot resolve com.mysq.jdbc.Connection.ping method.  Will use 'SELECT 1' instead.
+java.lang.NullPointerException
+	at com.alibaba.druid.pool.vendor.MySqlValidConnectionChecker.<init>(MySqlValidConnectionChecker.java:48)
+	at com.alibaba.druid.pool.DruidDataSource.initValidConnectionChecker(DruidDataSource.java:843)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:578)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.generator.MetaBuilder.build(MetaBuilder.java:90)
+	at com.jfinal.plugin.activerecord.generator.Generator.generate(Generator.java:217)
+	at com.syzc.common.kit._GeneratorModel.main(_GeneratorModel.java:46)

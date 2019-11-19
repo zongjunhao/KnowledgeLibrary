@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>上传知识</title>
+  <script type="text/javascript" src = "js/jquery.js"></script>
+  <script type="text/javascript" src = "js/jquerySession.js"></script> 
+  <link rel="stylesheet" type="text/css" href="css/design.css">
+  <script type="text/javascript" src="lib/js/detect-element-resize.js"></script>
+  <!-- 	监听页面窗口大小改变的插件 -->
+	<script type="text/javascript" src="lib/js/detect-element-resize.js"></script>
+  <style>
+    body{
+    	height:100%;
+    }
+	img {
+		height: 60px;
+		width: 60px;
+		margin-left: 30px;
+		margin-top: 20px;
+	}
+	
+	#form{
+		height:100%;
+	}
+	
+	.title {
+		font-size: 1.5em;
+		text-align: center;
+		font-family: Microsoft YaHei;
+		margin-bottom: 1em;
+	}
+	
+	.body {
+		width: 60%;
+		height:100%;
+		margin: 0 auto;
+	}
+	
+	.name {
+		font-size: 1.2em;
+	}
+	
+	.name input{
+  	margin-left:20px;
+    font-size:1.0em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	width:70%;
+	height:35px;
+  }
+	 .name input:disabled{
+/* 	border:1px solid #DDD; */
+/* 	background-color:#F5F5F5; */
+	background-color:white;
+	color:black;
+	border:none;
+	}
+	input:focus {
+		border: none;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+			rgba(102, 175, 233, .6);
+	}
+	
+	.type {
+		display: flex;
+		font-size: 1.2em;
+		margin: 1em 0;
+	}
+	
+	.type p {
+		margin: auto 0.3em;
+	}
+	
+	.content {
+		font-size: 1.2em;
+	}
+	
+	.content div {
+		width: 100%;
+		height: 200px;
+		margin: 0.5em 0;
+		color: grey;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+	
+	button {
+		float: right;
+		padding: 4px;
+		width: 70px;
+		font-size: 1em;
+		border: 1px solid #ccc;
+		height: 40px;
+		background-color: white;
+		font-family: Microsoft YaHei;
+		border-radius: 5px;
+	}
+	
+	button:focus {
+		border: none;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+			rgba(102, 175, 233, .6);
+	}
+	
+	.up_knowledge {
+		margin-left: 20px;
+	}
+	
+	.blueButton {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 40px;
+		background-color: #1f7cd3;
+		color: #fff;
+		text-decoration: none;
+		text-align: center;
+		font: normal normal normal 16px/40px 'Microsoft YaHei';
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	
+	.blueButton:hover {
+		text-decoration: none;
+	}
+	/*自定义上传,位置大小都和a完全一样,而且完全透明*/
+	.myFileUpload {
+		position: absolute;
+		display: flex;
+		width: 100px;
+		height: 40px;
+		opacity: 0;
+		flex-direction: row;
+	}
+	/*显示上传文件夹名的Div*/
+	.show {
+		position: absolute;
+		top: 71%;
+		flex-direction: row;
+		margin-left: 12%;
+		margin-top: -5%;
+		width: 35%;
+		height: 30px;
+		font: normal normal normal 14px/30px 'Microsoft YaHei';
+	}
+	
+	
+	.loading{
+		position:absolute;
+		width:400px;
+		height:300px;
+		top:90px;
+		left:30%;
+		z-index:100;
+		
+	}
+</style>
+</head>
+<body>
+  <img id="return" alt="返回" src="./image/返回.png">
+  <div class="title">上传知识</div>
+  <form action="user/uploadKnowledge" id="form" enctype="multipart/form-data" method="post">
+  <div class="body">
+  
+    <div class="name">
+    	知识名称:<input id="name" class="name1">
+  </div>
+    <div class="type">
+      <div>知识类别：</div>
+    </div>
+    <table id="label" width="600" height="100" cellpadding="0"  cellspacing="0">
+	</table>
+	<div id="loading"></div>
+    <div id="test" style="color: red;margin:1em auto;text-align:center">请至少选择一个标签</div>
+	<div style="display:flex;flex-direction:row;">
+		<a href='javascript:void(0);' class="blueButton">选择文件</a>
+        <input type="file" class="myFileUpload" name="file"/>
+        <input type="hidden" id="u_id" name="u_id" />
+        <input type="hidden" id="f_id" name="f_id"/>
+        <input type="hidden" id="k_name" name="k_name"/>
+        <input type="hidden" id="l_id" name="l_id"/>
+    </div>
+    	<div>
+    		<input class="modify" id="modify" type="button" value="上传"/> 
+    	</div>
+  	</div>
+	</form>
+</body>
+<script>
+
+$(document).ready(function (){
+    //监听子页面大小变化，设置父页面的iframe的大小
+    window.parent.document.getElementById("myiframe").height = 500
+});
+$("#test").hide();
+$("#u_id").val($.session.get("u_id"));
+$("#f_id").val($.session.get("u_firm"));
+$("#modify").click(function(){
+	
+	var l_id="["
+ 		var length=$("input:checkbox[name='check']:checked").length;
+ 		if(length!=0){
+ 			$("input:checkbox[name='check']:checked").each(function(i,index){
+ 				//操作
+ 				console.log($(this).attr("id"))
+ 				if(i<length-1){
+ 					l_id+=$(this).attr("id")+","
+ 				} else {
+ 					l_id+=$(this).attr("id")+"]"
+ 				}
+ 			});
+ 			$("#l_id").val($.parseJSON(l_id))
+ 			$("#k_name").val($("#name").val());
+ 	 		var formdata = new FormData(document.getElementById("form"));
+ 	 		$("#loading").append("<img src='./image/加载动画.gif' class='loading'></img>");
+ 	 		$.ajax({
+ 			type:"POST",
+ 			url:"/KnowledgeLibrary/user/uploadKnowledge",
+ 			//dataType: "json",
+ 			async: false,
+ 			cache: false,
+ 			contentType: false,
+ 			processData: false,
+ 			data:formdata,
+ 			success:function(res){
+ 				$("#loading").remove();
+ 				location.href=getUrlParam("return");
+ 				console.log(res);
+ 			},
+ 			error:function(res){
+ 				console.log(res);
+ 			}
+ 		})
+ 		}else{
+ 			$("#test").show();
+ 		}
+});
+
+$.ajax({
+	type : "POST",
+	url : "/KnowledgeLibrary/user/viewLabels",
+	data:{
+		f_id:$.session.get("u_firm")
+	},
+	success:function(res){
+		//console.log(res)
+		if(res.resultCode=="2006"){//查询成功
+			var label="";
+			$.each(res.data,function(i,value){
+				if((i%5)==0){
+					label+="<tr><td><input type='checkbox' name='check' id='"+value.l_id+"' /></td><td name="+value.l_id+" name1="+value.l_name+">"+value.l_name+"</td>";
+				}else if(((i%5)==4)||(i==(res.data.length-1))){
+					label+="<td><input type='checkbox' name='check' id='"+value.l_id+"' /></td><td name="+value.l_id+" name1="+value.l_name+">"+value.l_name+"</td></tr>";
+				}else{
+					label+="<td><input type='checkbox' name='check' id='"+value.l_id+"' /></td><td name="+value.l_id+" name1="+value.l_name+">"+value.l_name+"</td>";
+				}
+			})
+			//console.log(label)
+			$("#label").append(label)
+		} else {
+			//查询失败
+			console.log(res)
+			$("#label").append("<tr><td>当前还没有知识类别哦~</td></tr>")
+		}
+	},
+	error:function(res){
+		console.log(res)
+	}
+})   
+
+
+$(document).ready(function(){
+	        $(".myFileUpload").change(function()
+	        {
+	            var arrs=$(this).val().split('\\');
+	            var filename=arrs[arrs.length-1];
+	            $(".show").html(filename);
+	            $("#name").val(filename);
+	        });
+	    });
+
+  $("#return").click(function(){location.href=getUrlParam("return")})
+</script>
+</html>

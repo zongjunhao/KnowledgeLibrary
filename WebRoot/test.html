@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src = "js/jquery.js"></script>
+    <script type="text/javascript" src = "js/jquerySession.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input id="addBtn" onclick="addUser()" type="button" value="添加">
+    <button id="addUser" onclick="addUser()" class=" btn btn-default text-right" style="float: right;">添加</button>
+    <script>
+        function addUser(){
+            $.ajax({
+                    type:"post",
+                    url: "/KnowledgeLibrary/firm/addUser",
+                    data:{
+                        u_firm : "11",
+                        u_name : "2",
+                        u_gender : "男",
+                        u_phone : "13176553791",
+                        u_age : "20",
+                        u_mail: "151@qq.com",
+                        u_role : "2"
+                    },
+                    success:function(json){
+                        console.log("add",json)
+                        alert("正确")
+                        if (json.resultCode == "2012"){
+                            //window.location.href = "userlist.jsp";
+                        } else {
+                            // alert("您所请求的页面有异常");
+                            console.log(json.resultCode)
+                            console.log("状态码错误")
+                            // $("#submit_tip").text(json.resultDesc)
+                        }
+                    },
+                    error:function(res){
+                        console.log("error",res);
+                        alert("错误")
+                    }
+                })
+        }
+        // $(function(){
+        //     $("#addUser").click(function(){
+        //         $.ajax({
+        //             type:"post",
+        //             url: "/KnowledgeLibrary/firm/addUser",
+        //             data:{
+        //                 u_firm : "11",
+        //                 u_name : "2",
+        //                 u_gender : "男",
+        //                 u_phone : "13176553791",
+        //                 u_age : "20",
+        //                 u_mail: "151@qq.com",
+        //                 u_role : "2"
+        //             },
+        //             success:function(json){
+        //                 console.log("add",json)
+        //                 alert("正确")
+        //                 if (json.resultCode == "2012"){
+        //                     //window.location.href = "userlist.jsp";
+        //                 } else {
+        //                     // alert("您所请求的页面有异常");
+        //                     console.log(json.resultCode)
+        //                     console.log("状态码错误")
+        //                     // $("#submit_tip").text(json.resultDesc)
+        //                 }
+        //             },
+        //             error:function(res){
+        //                 console.log("error",res);
+        //                 alert("错误")
+        //             }
+        //         })
+        //     })
+
+        //     $("#addBtn").click(function(){
+        //         $.ajax({
+        //             type:"post",
+        //             url: "/KnowledgeLibrary/firm/addUser",
+        //             data:{
+        //                 u_firm : "11",
+        //                 u_name : "2",
+        //                 u_gender : "男",
+        //                 u_phone : "13176553791",
+        //                 u_age : "20",
+        //                 u_mail: "15145@qq.com",
+        //                 u_role : "2"
+        //             },
+        //             success:function(json){
+        //                 console.log("add",json)
+        //                 if (json.resultCode == "2012"){
+        //                     //window.location.href = "userlist.jsp";
+        //                 } else {
+        //                     // alert("您所请求的页面有异常");
+        //                     console.log(json.resultCode)
+        //                     console.log("状态码错误")
+        //                     // $("#submit_tip").text(json.resultDesc)
+        //                 }
+        //             },
+        //             error:function(res){
+        //                 console.log("error",res);
+        //                 alert("错误")
+        //             }
+        //         })
+        //     })
+        // })
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+  body{
+    background-image:url(../image/register.jpg);
+    background-size:100%;
+    background-repeat:y-repeat;
+    
+  }
+  .content{
+    margin:0 auto;
+    width:40%;
+    background-color:rgba(0, 0, 0, 0.75);
+    border-radius:10px;
+    text-align:center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.9), 0 8px 26px 0 rgba(0, 0, 0, 0.59);
+    margin-top:2em;
+  }
+  
+  .title{
+    color:white;
+    font-size:2.8em;
+    font-weight:bold;
+    padding:0.3em 0px;
+  }  
+   
+  .body{
+    text-align:center;
+    margin:2em 0px 1em  0px;
+  }
+  
+  .item{
+    margin:0.2em auto;
+    display:flex;
+    justify-content:center;
+  }
+  
+  img{
+    width:2em;
+    height:2em;
+    size:100%;
+    
+  }
+     
+  .bg1{
+    background:url(../image/公司名称.png) no-repeat ;
+  }
+  
+   .bg2{
+    background:url(../image/用户.png) no-repeat ;
+  }
+  
+   .bg3{
+    background:url(../image/统一社会信用代码.png) no-repeat ;
+  }
+  
+   .bg4{
+    background:url(../image/电话.png) no-repeat ;
+  }
+  
+   .bg5{
+    background:url(../image/地址.png) no-repeat ;
+  }
+  
+  .bg6{
+    background:url(../image/邮箱.png) no-repeat ;
+  }
+  
+  .bg7,.bg8{
+    background:url(../image/密码.png) no-repeat ;
+  }
+  
+  .bg9{
+    background:url(../image/介绍.png) no-repeat ;
+    background-size:8%;
+    background-color: white;
+    background-position:5px 5px;
+    padding-left:1.3em;
+    font-size:1.5em;  
+    border-radius:4px;
+    overflow:hidden;
+    margin:5px 0;
+  }
+  
+  .item input{  
+    background-size:8%;
+    background-color: white;
+    background-position:5px;
+    padding-left:1.5em;
+    font-size:1.5em;  
+    border-radius:4px;
+    margin:5px 0;
+    width: 300px;
+  }
+  
+  .button1,.button2{
+    font-size:1.5em;
+    margin:0.8em;
+    margin-top:0px;
+    border-radius:4px;
+    padding:5px 10px;
+  }
+  
+  .button2{
+    background-color:white;
+  
+  }
+  
+  .button1{
+    background-color:rgba(227, 149, 78, 0.7);
+    color:white;
+    border-color:black;
+    border-width:1px;
+  }
+  
+  #confirmBtn{
+  	height: 32px;
+    width: 110px;
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    color: #666;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  
+  #confirmCode{
+  	width: 170px;
+    margin-right: 20px;
+  }
+  
+  #confirm{
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  textarea{
+  	width: 310px;
+  }

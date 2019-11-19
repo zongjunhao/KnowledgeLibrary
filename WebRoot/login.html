@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/login.css" type="text/css" />
+    <script type="text/javascript" src = "js/jquery.js"></script>
+    <script type="text/javascript" src = "js/jquerySession.js"></script>
+    <script type="text/javascript" src = "js/login.js"></script>	
+    <title>Login</title>
+</head>
+<body>
+    <div class="background_wrap">
+        <div class="header"></div>
+        <div class="loginWrap">
+            <div class="loginWd">
+                <div id="loginForm">
+                    <div class="left_text_wrap">
+                        <h1>不只是知识，</h1>
+                        <h1>更是一种高效办公新体验</h1>
+                    </div>
+                    <div class="login_return_msg">
+                        <div id="returnMsg"></div>
+                        <div class="err_tips" id="msgContainer" style="line-height: 1;"></div>
+                    </div>
+                    <div class="login_scan_panel" style="margin-top:0;" data-panel="qrcode" style="height: 420px;">
+                        <div class="header_nav">
+                            <a href="javascript:;" id="user_nav" onclick="user_click()" class="nav_item js_verify_item curr">
+                                <div>用户登录</div>
+                                <div class="curr_line"></div>
+                            </a>
+                            <a href="javascript:;" id="admin_nav" onclick="admin_click()" class="nav_item js_verify_item">
+                                <div>管理员登录</div>
+                                <div class="curr_line"></div>
+                            </a>
+                        </div>
+                        <div class="tab-content">    
+                            <div class="tab-pane active" id="user_tab">      
+                                <input class="input" id="user_name" type="text" name="username"  placeholder="用户邮箱" size="35" maxlength ="20" onfocus="user_name_recovery()" onblur="check_user_name()">
+                                <div id="user_tip" style="color:white; height: 30px;">请输入正确的用户邮箱!</div>      
+                                <input class="input" type="password" id="user_password" name="password" placeholder="密码" size="35" maxlength = "24" onfocus="user_pwd_recovery()" onblur="check_user_pwd()">
+                                <div id="user_pwd_tip" style="color:white; height: 30px;">请输入密码!</div>
+                                <div class="randomCode">
+                                    <input class="input" type="text" id="user_inputRandomCode" name="inputRandomCode" placeholder="验证码" size="35" maxlength = "24" onfocus="user_code_recovery()" onblur="check_user_code()">
+                                    <img id="user_pic" src="user/pic" onclick="this.src='user/pic?x='+Math.random()">
+                                </div>
+                                <div id="user_code_tip" style="color:white; height: 30px;">请输入验证码</div>
+                                <input id="user_login" onclick="user_login()"class="login"  type="button" name="submit" value="登录">    
+                            </div>  
+
+                            <div class="tab-pane" id="admin_tab">      
+                                <input class="input" id="admin_name" type="text" name="adminname"  placeholder="用户名" size="35" maxlength ="20" onfocus="admin_name_recovery()" onblur="check_admin_name()">
+                                <div id="admin_tip" style="color:white; height: 30px;">请输入用户名!</div>
+                                <input class="input" type="password" id="admin_password" name="password" placeholder="密码" size="35" maxlength = "24" onfocus="admin_pwd_recovery()" onblur="check_admin_pwd()">
+                                <div id="admin_pwd_tip" style="color:white; height: 30px;">请输入密码!</div>
+                                <div class="randomCode">
+                                    <input class="input" type="text" id="admin_inputRandomCode" name="inputRandomCode" placeholder="验证码" size="35" maxlength = "24" onfocus="admin_code_recovery()" onblur="check_admin_code()">
+                                    <img id="admin_pic" src="user/pic" onclick="this.src='user/pic?x='+Math.random()">
+                                </div>
+                                <div id="admin_code_tip" style="color:white; height: 30px;">请输入验证码</div>
+                                <input id="admin_login" onclick="admin_login()" class="login"  type="button" name="submit" value="登录">
+                            </div> 
+                        </div>
+                        <div class="login_scan_footer">
+                            <a href="company_register.html" class="js_show_pwd_panel">公司注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="frame_foot_copyright">Copyright © 识意智创 by 识意小分队</div>
+    <script>
+        $("body").keydown(function() {
+            if (event.keyCode == "13") {//keyCode=13是回车键
+                $('#user_login').click();
+            }
+        });
+        $("body").keydown(function() {
+            if (event.keyCode == "13") {//keyCode=13是回车键
+                $('#admin_login').click();
+            }
+        });
+    </script>
+</body>
+</html>

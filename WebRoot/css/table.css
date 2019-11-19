@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+table {
+	border: 1px solid #9cc2e5;
+}
+
+th {
+	background: #00676B;
+	color: #FF4500;
+	line-height: 20px;
+	height: 30px;
+}
+
+td {padding 6px 11px;
+	border: 1px solid #9cc2e5;
+	vertical-align: top;
+	text-align: center;
+}
+
+td * {padding 6px 11px;
+	
+}
+
+tbody tr:nth-child(odd) {
+	background: #deeaf6;
+}  
+
+tbody tr:nth-child(even) {
+	background: white;
+}

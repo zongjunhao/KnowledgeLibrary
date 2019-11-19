@@ -1,0 +1,342 @@
+/* 管理员和用户登录界面 */
+.root {
+	background-image: url(../image/1.jpg);
+	background-size: 112%;
+	background-repeat: repeat-y;
+/* 	repeat :　 默认值。背景图像在纵向和横向上平铺  */
+/* 	no-repeat :　 背景图像不平铺  */
+/* 	repeat-x :　 背景图像仅在横向上平铺  */
+/* 	repeat-y :　 背景图像仅在纵向上平铺  */
+	margin: 0px;
+}
+
+.button {
+	float: right;
+}
+
+.flex_row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 600px;
+	margin: auto;
+}
+
+.flex_column {
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	/* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 40px;
+	width: 256px;
+}
+
+input:focus {
+	/*  border-color: #66afe9; */
+	outline: 0;
+	border: none;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	/* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); */
+	/* box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);  */
+}
+
+.font_style {
+	font-family: 楷体;
+	font-size: 80px;
+	color: white;
+}
+
+.column {
+	padding: 0px 0px;
+	color: white;
+	font-size: 18px;
+	margin-left: -150px;
+	font-family: Microsoft YaHei;
+	height: 30px;
+}
+
+.styled-select select {
+	background: transparent;
+	margin-left: -6px;
+	width: 210px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	border-radius: 5px;
+}
+
+/* admin_mainpage.jsp */
+.select_company {
+	background: transparent;
+	width: 400px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	border-radius: 5px;
+	margin-top: 50px;
+}
+
+.search {
+	width: 65px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	border-radius: 5px;
+	margin-top: 50px;
+}
+
+.com_list_title {
+	font-family: Microsoft YaHei;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+/* 公司详情(审核) */
+.icon {
+	float: left;
+	height: 60px;
+	width: 60px;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.td {
+	border: 0px;
+	width: 150px;
+}
+
+.pass {
+	background: transparent;
+	width: 70px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 730px;
+}
+
+.unpass {
+	background: transparent;
+	width: 70px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 80px;
+}
+
+.notify {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 300px;
+	width: 600px;
+}
+
+.send {
+	background: transparent;
+	width: 70px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+	border-radius: 5px;
+	margin-top: 30px;
+	float: right;
+}
+
+/* 公司信息 */
+.com_input {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 40px;
+	margin-top: 50px;
+	width: 300px;
+}
+
+.modify {
+	background: transparent;
+	width: 70px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	border-radius: 5px;
+	float: right;
+}
+
+.know_table {
+	height: 100px;
+	width: 60px;
+	vertical-align: middle;
+}
+
+/* 知识详情 */
+.message {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 100px;
+	width: 600px;
+}
+
+/* 用户管理页面 */
+.select_user {
+	width: 200px;
+	padding: 4px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	background-color: white;
+	font-family: Microsoft YaHei;
+/* 	border-radius: 5px; */
+	margin-top: 50px;
+/* 	margin-left: 20px; */
+	-webkit-appearance: none; /*for chrome*/
+}
+
+.select_user:focus {
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+		rgba(102, 175, 233, .6);
+}
+
+.select_user_table {
+	background: transparent;
+	width: 340px;
+	padding: 0px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 40px;
+	-webkit-appearance: none; /*for chrome*/
+	background-color: white;
+	font-family: Microsoft YaHei;
+	border-radius: 5px;
+}
+
+.comment {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 100px;
+	width: 75%;
+}
+
+.comment_zone {
+	border: 1px solid #ccc;
+	padding: 7px 0px;
+	border-radius: 5px;
+	padding-left: 5px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 100px;
+	width: 600px;
+}
+
+.randomCode {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.randomCode input{
+	width: 150px;
+    margin-right: 20;
+}
+
+.randomCode img{
+	width: 86px;
+    height: 32px;
+}
+
+	#pageBox {
+/*         padding: 10px 0 0 0; */
+		width:700px;
+		margin:0 auto;
+    }  
+ 
+    #pageBox img {
+    	margin-top:15px;
+/*     	float:right; */
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        line-height: 24px;
+        text-align: center;
+        color: #fff;
+        background:white;
+ 		border-radius: 3px;
+     }
+ 
+     #pageNav {
+         display: inline-block;
+         line-height:15px;
+     }
+
+ 
+        #prev:hover {
+            cursor: pointer;
+        }
+ 
+        #next:hover {
+            cursor: pointer;
+        }

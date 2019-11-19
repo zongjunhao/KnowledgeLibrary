@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- 添加bootstrap的css样式表 -->
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
+	<!-- 添加JQ -->
+	<script type="text/javascript" src="lib/jq/jquery-3.4.1.js"></script>
+	<script type="text/javascript" src="js/jquerySession.js"></script>
+	<!-- 添加bootstrap的库 -->
+	<script type="text/javascript" src="lib/js/bootstrap.js"></script>
+	<!-- 	监听页面窗口大小改变的插件 -->
+	<script type="text/javascript" src="lib/js/detect-element-resize.js"></script>
+	<!-- 引用阿里的字体图标库 -->
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1333406_174a1653fij.css">
+	<style>
+		#userInfo{
+			padding-top:20px;
+		}
+	</style>
+  </head>
+  <body>
+	<div id="userInfo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="form-horizontal">
+
+						<div class="form-group">
+                            <label class="col-sm-4 control-label">姓名</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input type="text" class="u_name form-control" placeholder="请输入姓名" />
+                                    <span class="input-group-btn">
+                                        <span class="icon1 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">性别</label>
+                            <div class="col-sm-8">
+                                <div class=" input-group ">
+                                    <select class="u_gender form-control">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option> 
+                                    </select>
+                                    <span class="input-group-btn">
+                                        <span class="icon2 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div><!-- /input-group -->
+                                <!-- <div class="f_corporation form-control">小杨</div> -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">年龄</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input type="text" class="u_age form-control" placeholder="请输入年龄" />
+                                    <span class="input-group-btn">
+                                        <span class="icon3 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div><!-- /input-group -->
+                                <!-- <div class="f_code form-control">FHDJHSO123HK</div> -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">电话</label>
+                            <div class="col-sm-8">
+                                <!-- <div class="f_phone form-control">15717172075</div> -->
+                                <div class="input-group">
+                                    <input type="text" class="u_phone form-control" placeholder="请输入电话" />
+                                    <span class="input-group-btn">
+                                        <span class="icon4 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">邮箱</label>
+                            <div class="col-sm-8">
+                                <!-- <div class="f_phone form-control">15717172075</div> -->
+                                <div class="input-group">
+                                    <input type="text" class="u_email form-control" placeholder="请输入邮箱" />
+                                    <span class="input-group-btn">
+                                        <span  class="icon5 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">权限</label>
+                            <div class="col-sm-8">
+                                <!-- <div class=" form-control">中南财经政法大学识意小分队</div>  input-group-->
+                                <div class="input-group ">
+                                    <select class="u_role form-control">
+                                        <option value="1">普通员工</option>
+                                        <option value="2">用户管理员</option> 
+                                        <option value="3">知识管理员</option> 
+                                        <option value="4">超级管理员</option> 
+                                    </select>
+                                    <span class="input-group-btn">
+                                        <span  class="icon6 iconfont icon-tongguo"></span>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="button" value="添加" onclick="userAdd()" class=" btn btn-default text-right" style="float: right;">
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    <script>  
+        $(document).ready(function (){
+            //监听子页面大小变化，设置父页面的iframe的大小
+            window.parent.document.getElementById("myiframe").height=$(document.body).height();
+            console.log("setHeight")
+            addResizeListener(document.getElementsByTagName("body")[0],function(){
+                window.parent.document.getElementById("myiframe").height=$(document.body).height();
+            });
+        });
+
+        function userAdd(){
+            if(checkName()&&checkAge()&&checkPhone()&&checkEmail()){
+                console.log("addUser")
+                $.ajax({
+                    type:"post",
+                    url: "/KnowledgeLibrary/firm/addUser",
+                    data:{
+                        u_firm : $.session.get("u_firm"),
+                        u_name : $(".u_name").val(),
+                        u_gender : $(".u_gender option:selected").text(),
+                        u_phone : $(".u_phone").val(),
+                        u_age : $(".u_age").val(),
+                        u_mail: $(".u_email").val(),
+                        u_role : $(".u_role option:selected").val()
+                        // u_firm : "11",
+                        // u_name : "2",
+                        // u_gender : "男",
+                        // u_phone : "13176553791",
+                        // u_age : "20",
+                        // u_mail: "151@qq.com",
+                        // u_role : "2"
+                    },
+                    success:function(json){
+                        console.log("add",json)
+                        // alert("正确")
+                        if (json.resultCode == "2012"){
+                            window.location.href = "userlist.jsp";
+                        } else {
+                            // alert("您所请求的页面有异常");
+                            console.log(json.resultCode)
+                            console.log("状态码错误")
+                            // $("#submit_tip").text(json.resultDesc)
+                        }
+                    },                        
+                    error:function(res){
+                        console.log("error",res);
+                        // alert("错误")
+                    }
+                })
+            }
+        }
+
+        $(function(){
+            // $("#addUser").click(function(){
+            //     if(checkName()&&checkAge()&&checkPhone()&&checkEmail()){
+            //         console.log("addUser")
+            //         $.ajax({
+            //             type:"post",
+            //             url: "/KnowledgeLibrary/firm/addUser",
+            //             data:{
+            //                 u_firm : $.session.get("u_firm"),
+            //                 u_name : $(".u_name").val(),
+            //                 u_gender : $(".u_gender option:selected").text(),
+            //                 u_phone : $(".u_phone").val(),
+            //                 u_age : $(".u_age").val(),
+            //                 u_mail: $(".u_email").val(),
+            //                 u_role : $(".u_role option:selected").val()
+            //             },
+            //             success:function(json){
+            //                 console.log("add",json)
+            //                 alert("正确")
+            //                 if (json.resultCode == "2012"){
+            //                     //window.location.href = "userlist.jsp";
+            //                 } else {
+            //                     // alert("您所请求的页面有异常");
+            //                     console.log(json.resultCode)
+            //                     console.log("状态码错误")
+            //                     // $("#submit_tip").text(json.resultDesc)
+            //                 }
+            //             },
+            //             error:function(res){
+            //                 console.log("error",res);
+            //                 alert("错误")
+            //             }
+            //         })
+            //     }
+            // })
+           
+            // $(".icon1").css({"color":"green"});
+		    $(".icon2").css({"color":"green"});
+		    // $(".icon3").css({"color":"green"});
+		    // $(".icon4").css({"color":"green"});
+		    // $(".icon5").css({"color":"green"});
+		    $(".icon6").css({"color":"green"});
+		    //$(".icon7").css({"color":"green"});
+		    checkName();
+		    checkAge();
+		    checkPhone();
+		    checkEmail();
+		    
+		    $(".u_name").on("blur",function(){
+		        checkName()
+			});	
+		    $(".password1").on("blur",function(){
+		        checkOldPass()
+			});
+		    $(".password2").on("blur",function(){
+		        checkNewPass()
+			});
+		    $(".password").on("blur",function(){
+		        checkNewPass1()
+			});
+		    $(".u_phone").on("blur",function(){
+		        checkPhone()
+			});	
+		    $(".u_age").on("blur",function(){
+		        checkAge()
+			});	
+		    $(".u_email").on("blur",function(){
+		        checkEmail()
+			});	
+        })
+
+        function checkName(){
+		    if(($(".u_name").val()=="")){
+			    //console.log("empty")
+	            $(".icon1").removeClass("icon-tongguo").addClass("icon-jujue").css({"color":"red"});
+                return false;
+	        }else{
+	    	    //console.log("not")
+	    	    $(".icon1").removeClass("icon-jujue").addClass("icon-tongguo").css({"color":"green"});
+	    	    return true;
+            }
+        }
+
+        function checkAge(){
+		    if(($(".u_age").val()=="")){
+			    //console.log("empty")
+	            $(".icon3").removeClass("icon-tongguo").addClass("icon-jujue").css({"color":"red"});
+			    return false;
+            }else{
+	    	    //console.log("not")
+	    	    $(".icon3").removeClass("icon-jujue").addClass("icon-tongguo").css({"color":"green"});
+	    	    return true;
+	        }
+        }
+        function checkPhone(){
+		    var myPho = /^[1][3,4,5,7,8][0-9]{9}$/;
+		    if(!myPho.test($(".u_phone").val())){
+                console.log("电话错误")
+                $(".icon4").removeClass("icon-tongguo").addClass("icon-jujue").css({"color":"red"});
+	            return false;
+	        }else{
+	            $(".icon4").removeClass("icon-jujue").addClass("icon-tongguo").css({"color":"green"});
+	    	    return true;
+	        }
+	    }
+	  
+	    function checkEmail(){
+		    var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;   
+		    if(!myReg.test($(".u_email").val())){
+                console.log("邮箱错误")
+	            $(".icon5").removeClass("icon-tongguo").addClass("icon-jujue").css({"color":"red"});
+	            return false;
+	        }else{
+	    	    $(".icon5").removeClass("icon-jujue").addClass("icon-tongguo").css({"color":"green"});
+	    	    return true;
+	        }
+	    }
+    </script>
+  </body>
+</html>

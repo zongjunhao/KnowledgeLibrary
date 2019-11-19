@@ -1,0 +1,35 @@
+    body{
+      background-image:url(../image/1.jpg);
+      background-size:112%;
+      background-repeat:y-repeat;     
+      margin:0px;
+/*       height:100%; */
+    }
+    
+    h1{
+      color:white;
+      font-size:4em;
+      margin-top:0.5em;
+      font-family:楷体;
+    }
+    
+    .allRole{
+      display:flex;
+      justify-content:center;
+    }
+    
+    .role{
+      width:18em;
+      height:18em;
+      background-color:white;
+      opacity:0.9;
+      border-radius:50%;
+      margin:5em;
+      box-shadow: 3px 3px 13px white;
+    }
+    
+    .name{
+      font-size:2em;
+      font-family:楷体;
+      font-weight:bold;
+    }

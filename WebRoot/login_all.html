@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>登录页面</title>
+<meta charset="UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!-- <meta content="text/html;charset=utf-8″ /> -->
+
+<link rel="stylesheet" type="text/css" href="css/design.css">
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquerySession.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css"></script>
+</head>
+<style>
+	.input {
+		border: 1px solid #ccc;
+		padding: 7px 0px;
+		border-radius: 5px;
+		padding-left: 5px;
+		/* 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		height: 40px;
+		width: 256px;
+	}
+	
+	input:focus {
+		/*  border-color: #66afe9; */
+		outline: 0;
+		border: none;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
+			rgba(102, 175, 233, .6);
+		/* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); */
+		/* box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);  */
+	}
+	.bg{
+		background:rgba(0,0,0,0.4);
+		height:65%;
+		width:33%;
+		padding-top:0px;
+	}
+	.login{
+		font-family: 新宋体;
+		font-size: 1.2em;
+		background-color:white;
+		height:38px;
+		width:80px; 
+		margin-right:2em; 
+		padding:0;
+		border-radius: 5px;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+	.return{
+ 		font-family: 新宋体; 
+		font-size: 1.2em;
+		background-color:white;
+		height:38px;
+		width:80px; 
+		padding:0; 
+		border-radius: 5px;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+
+	li{
+		font-size:1.0em;
+	}
+	
+	.account{
+		margin-top:10px;
+	}
+	a{
+		 color: #ffffff;
+    	 text-decoration: none;
+	}
+</style>
+<body class="root">
+	<center>
+		<br></br>
+		<div class="font_style">欢迎来到知识管理系统</div>
+		<br> <br>
+		<div class="bg">
+			<!-- 页面主内容 -->
+		<!--角色切换导航栏 -->
+		<div class="tabbable">  
+			<ul class="nav nav-tabs nav-justified">    
+				<li class="active"><a href="#tab1" data-toggle="tab">系统管理员</a></li>
+				<!-- <li ><a href="#tab2" data-toggle="tab">公司管理员</a></li>     -->
+				<li ><a href="#tab3" data-toggle="tab">用户</a></li>  
+			</ul>  
+			<div class="tab-content">    
+				<div class="tab-pane active " id="tab1">      
+					<div class="account column">账  号：</div>
+			 		  <input class="input" id="admin_name" type="text" name="username"  placeholder="用户名" size="35" maxlength ="20" >
+			 	      <div id="test1" style="color:white;">请输入用户名!</div>      
+			 	      
+			 		  
+			 		  <div class="column" style="margin-top:20px;">密  码：</div>
+			 		  <input class="input" type="password" id="admin_password" name="password" placeholder="密码" size="35" maxlength = "24">
+			 	      <div id="test2" style="color:white;">请输入密码!</div>
+			 	      
+			 	      <div class="column" style="margin-top:20px;">验证码：</div>
+			 	      <div class="randomCode">
+			 	      	<input class="input" type="text" id=admin_inputRandomCode name="inputRandomCode" placeholder="验证码" size="35" maxlength = "24">
+					    <img id="admin_pic" src="user/pic" onclick="this.src='user/pic?x='+Math.random()">
+					  </div>
+			 	      <div id="test3" style="color:white;margin-top:10px;"></div>
+			 	      <br >
+						<tr>
+							<td colspan = "2" align = "center">
+			 		    	<input id="admin_login" class="login"  type="button" name="submit" value="登录">
+			 		    	<input id="return" class="return"  type="button" value="返回"/>
+			 	      </td>
+						</tr>   
+				</div>    
+
+				<div class="tab-pane" id="tab3">      
+					<div class="account column">账  号：</div>
+			 		  <input class="input" id="user_name" type="text" name="username"  placeholder="用户邮箱" size="35" maxlength ="20" >
+			 	      <div id="test7" style="color:white;">请输入正确的用户邮箱!</div>      
+			 	   
+			 		  <div class="column" style="margin-top:20px;">密  码：</div>
+			 		  <input class="input" type="password" id="user_password" name="password" placeholder="密码" size="35" maxlength = "24">
+			 	      <div id="test8" style="color:white;">请输入密码!</div>
+			 	      
+			 	      <div class="column" style="margin-top:20px;">验证码：</div>
+			 	      <div class="randomCode">
+			 	      	<input class="input" type="text" id=user_inputRandomCode name="inputRandomCode" placeholder="验证码" size="35" maxlength = "24">
+					    <img id="user_pic" src="user/pic" onclick="this.src='user/pic?x='+Math.random()">
+					  </div>
+			 	      <div id="test9" style="color:white;margin-top:10px;"></div>
+			 	      <br>
+			
+						<tr>
+							<td colspan = "2" align = "center">
+			 		    	<input id="user_login" class="login"  type="button" name="submit" value="登录">
+			 		    	<input id="return" class="return"  type="button" value="返回"/>
+			 	      </td>
+						</tr>    
+				</div>  
+			</div>
+		</div>
+
+			
+		  
+		</div>
+	</center>
+	
+</body>
+<script type="text/javascript">
+$("body").keydown(function() {
+	if (event.keyCode == "13") {//keyCode=13是回车键
+		$('#admin_login').click();
+	}
+});
+$("body").keydown(function() {
+	if (event.keyCode == "13") {//keyCode=13是回车键
+		$('#company_login').click();
+	}
+});
+$("body").keydown(function() {
+	if (event.keyCode == "13") {//keyCode=13是回车键
+		$('#user_login').click();
+	}
+});
+
+if($("#tab1").hasClass("active")){
+	$("#test1").hide();
+	$('#admin_name').on('blur', function() {
+		if (($('#admin_name').val() == '')) {
+			$("#test1").show();
+			$("#test3").text(" ");
+		} else {
+			$("#test1").hide();
+		}
+	});
+
+	$("#test2").hide();
+	$('#admin_password').on('blur', function() {
+		if (($('#admin_password').val() == '')) {
+			$("#test2").show();
+			$("#test3").text(" ");
+		} else {
+			$("#test2").hide();
+		}
+	});
+
+	/*  $("#login").click(function(){ location.href='admin_main.jsp'}) */
+	$("#return").click(function() {
+		location.href = "chooseRole.jsp"
+	});
+	
+	$("#admin_login").click(function() {
+		 if (($('#admin_name').val() == '')) {
+			$("#test1").show();
+			
+		} else {
+			$("#test1").hide();
+		}
+		if (($('#admin_password').val() == '')) {
+			$("#test2").show();
+			//$("#test3").text(" ");
+		} else {
+			$("#test2").hide();
+		}
+		if (($('#admin_password').val() != '') && ($('#admin_name').val() != '')) { 
+			$.ajax({
+				type : "POST",
+				url : "/KnowledgeLibrary/sysAdmin/login",
+				data : {
+					a_account : $("#admin_name").val(),
+					a_pwd : $("#admin_password").val(),
+					inputRandomCode : $("#admin_inputRandomCode").val()
+				},
+				success : function(json) {
+					console.log(json);
+					if (json.resultCode == "4000") {
+						//登录成功
+						//alert(json.resultDesc);
+						$.session.set("role", "1");
+					    $.session.set("a_id", json.data.a_id);
+					    $.session.set("a_account",json.data.a_account);
+					    $.session.set("a_pwd",json.data.a_pwd);
+						window.location.href = "index.html";
+					} else {
+						//登录失败
+						//alert(json.resultDesc);
+						$("#test3").text(json.resultDesc)
+						$("#admin_pic").attr('src','user/pic?x='+Math.random()); 
+					}
+				},
+				error : function(jqXHR) {
+					$("#test3").text("您所请求的页面有异常")
+				}
+			});
+		 } 
+	});
+}//else if($('#tab2').hasClass("active")){
+	
+	$("#test4").hide();
+	  $('#com_name').on('blur',function(){
+	      if(($('#com_name').val()=='')){
+	        $("#test4").show();
+	      }else{
+	        $("#test4").hide();
+	      }
+	    });
+	  
+	  $("#test5").hide();
+	  $('#com_password').on('blur',function(){
+	      if(($('#com_password').val()=='')){
+	        $("#test5").show();
+	      }else{
+	        $("#test5").hide();
+	      }
+	    });
+	  
+
+      $("#return").click(function(){location.href="chooseRole.jsp"})
+      $("#register").click(function(){location.href="register.jsp"})
+  
+//}else if($("#tab3").hasClass("active")){
+	$("#test7").hide();
+	  $('#user_name').on('blur',function(){
+	      if(($('#user_name').val()=='')){
+	        $("#test7").show();
+	      }else{
+	        $("#test7").hide();
+	      }
+	    });
+	  
+	  $("#test8").hide();
+	  $('#user_password').on('blur',function(){
+	      if(($('#user_password').val()=='')){
+	        $("#test8").show();
+	      }else{
+	        $("#test8").hide();
+	      }
+	    });
+	  $("#user_login").click(function() {
+			 if (($('#user_name').val() == '')) {
+				$("#test7").show();
+				
+			} else {
+				$("#test8").hide();
+			}
+			if (($('#user_password').val() == '')) {
+				$("#test8").show();
+			} else {
+				$("#test8").hide();
+			}
+			if (($('#user_password').val() != '') && ($('#user_name').val() != '')) { 
+				$.ajax({
+					type : "POST",
+					url : "/KnowledgeLibrary/user/login",
+					data : {
+						u_mail : $("#user_name").val(),
+						u_pwd : $("#user_password").val(),
+						inputRandomCode : $("#user_inputRandomCode").val()
+					},
+					success : function(json) {
+						console.log(json)
+						if (json.resultCode == "4000") {
+							//登录成功
+							//alert(json.resultDesc);
+							$.session.set("u_age",json.data.u_age);
+							$.session.set("u_mail",json.data.u_email);
+							$.session.set("u_firm",json.data.u_firm);
+							$.session.set("u_gender",json.data.u_gender);
+							$.session.set("u_id",json.data.u_id);
+							$.session.set("u_name",json.data.u_name);
+							$.session.set("u_phone",json.data.u_phone);
+							$.session.set("u_pwd",json.data.u_pwd);
+							$.session.set("u_role",json.data.u_role);
+							let role=json.data.u_role+1;
+							console.log(role)
+							$.session.set("role", role);
+							console.log($.session.get("role"))
+							window.location.href = "index.html";
+						} else {
+							//登录失败
+							//alert(json.resultDesc);
+							$("#test9").text(json.resultDesc)
+							$("#user_pic").attr('src','user/pic?x='+Math.random()); 
+						}
+					},
+					error : function(jqXHR) {
+						$("#test9").text("您所请求的页面有异常")
+					}
+				});
+			 } 
+		});
+	  
+	  
+	  $("#return").click(function(){location.href="chooseRole.jsp"});
+	 
+//}
+		
+	</script>
+</html>
