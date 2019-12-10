@@ -130,7 +130,7 @@ $(document).ready(function () {
     	//location.href="knowledge_searchAll.jsp?search_msg="+$(".com_input").val()+"&order="+$(".select_user option:selected").val();
     })
 	
-    var f_id=($.session.get("role")==2?$.session.get("f_id"):$.session.get("u_firm"));
+    var f_id=($.session.get("role")==1?$.session.get("f_id"):$.session.get("u_firm"));
     $.ajax({
     	type:"POST",
     	url:"/KnowledgeLibrary/user/viewLabels",

@@ -168,7 +168,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="myComment">
 		<font style="font-size:1.2em;width:75%;">我的评论</font>
 		<div>
-			<textarea id="text" style="margin-top: 20px;" class="comment" name="username"  placeholder="请输入评论内容..." size="25" maxlength ="20"></textarea>
+			<textarea id="text" style="margin-top: 20px;" class="comment" name="username"  placeholder="请输入评论内容..." size="25"></textarea>
 			<div id="comment" style="color:red;">发布的评论不能为空！</div>
 		</div>
 		</div>
