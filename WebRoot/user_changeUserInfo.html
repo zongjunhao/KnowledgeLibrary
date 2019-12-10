@@ -1,8 +1,8 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <meta charset="utf-8" />
+
+<head>
+	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- 添加bootstrap的css样式表 -->
@@ -15,18 +15,19 @@
 	<!-- 	监听页面窗口大小改变的插件 -->
 	<script type="text/javascript" src="lib/js/detect-element-resize.js"></script>
 	<style>
-		#userInfo{
-			padding-top:20px;
+		#userInfo {
+			padding-top: 20px;
 		}
 	</style>
-    </head>
-  <body>
-  	<div id="userInfo">
+</head>
+
+<body>
+	<div id="userInfo">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<div class="form-horizontal">
-						
+
 						<div class="form-group">
 							<label class="col-sm-4 control-label">名称</label>
 							<div class="col-sm-8">
@@ -60,100 +61,102 @@
 						<div class="form-group">
 							<label class="col-sm-4 control-label">权限</label>
 							<div class="col-sm-8">
-							<select class="u_role form-control">
-								<option value="1">普通员工</option>
-							    <option value="2">用户管理员</option> 
-							    <option value="3">知识管理员</option> 
-							    <option value="4">超级管理员</option> 
-							    <option value="5">公司管理员</option> 
-							</select>
-							
+								<select class="u_role form-control">
+									<option value="1">普通员工</option>
+									<option value="2">用户管理员</option>
+									<option value="3">知识管理员</option>
+									<option value="4">超级管理员</option>
+									<option value="5">公司管理员</option>
+								</select>
+
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button id="modify" class=" btn btn-default text-right" style="float: right;">修改</button>
+								<button id="modify" class=" btn btn-default text-right"
+									style="float: right;">修改</button>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
-  </body>
-  <script>
-  $(document).ready(function () {
-		//监听子页面大小变化，设置父页面iframe的大小
-	  if($(document.body).height()<355){
-			window.parent.document.getElementById("myiframe").height = 355
-		}else{
-			window.parent.document.getElementById("myiframe").height=$(document.body).height();
-		}
-		//window.parent.document.getElementById("myiframe").height=$(document.body).height();
-		console.log("setHeight")
-		addResizeListener(document.getElementsByTagName("body")[0],function(){
-			if($(document.body).height()<355){
-				window.parent.document.getElementById("myiframe").height = 355
-			}else{
-				window.parent.document.getElementById("myiframe").height=$(document.body).height();
-			}
-		});
-	});
-  
-  $(function(){
-	  
-	  var id = (getUrlParam("id")==null?$.session.get("u_id"):getUrlParam("id"))
-	  console.log("id",id)
-	  $.ajax({
-		  type:"post",
-		  url:"/KnowledgeLibrary/user/viewUserInfo",
-		  data:{
-			  u_id:id
-		  },
-		  success:function(res){
-			  console.log(res)
-			  $(".u_name").text(res.data.u_name)
-			  $(".u_gender").text(res.data.u_gender)
-			  $(".u_phone").text(res.data.u_phone)
-			  console.log(res.data.u_role)
-			  $(".u_role").val(res.data.u_role)
-			  $(".u_age").text(res.data.u_age)
-			  $(".u_email").text(res.data.u_email)
-		  },
-		  error:function(res){
-			  console.log(res)
-		  }
-	  })
+</body>
+<script>
+	//   $(document).ready(function () {
+	// 		//监听子页面大小变化，设置父页面iframe的大小
+	// 	  if($(document.body).height()<355){
+	// 			window.parent.document.getElementById("myiframe").height = 355
+	// 		}else{
+	// 			window.parent.document.getElementById("myiframe").height=$(document.body).height();
+	// 		}
+	// 		//window.parent.document.getElementById("myiframe").height=$(document.body).height();
+	// 		console.log("setHeight")
+	// 		addResizeListener(document.getElementsByTagName("body")[0],function(){
+	// 			if($(document.body).height()<355){
+	// 				window.parent.document.getElementById("myiframe").height = 355
+	// 			}else{
+	// 				window.parent.document.getElementById("myiframe").height=$(document.body).height();
+	// 			}
+	// 		});
+	// 	});
 
-	  $("#modify").click(function(){
-		  $.ajax({
-				type:"POST",
-				url : "/KnowledgeLibrary/firm/modifyUserInfo",
-				data : {
-					u_id : id,
-					u_name : $(".u_name").text(),
-					u_role : $(".u_role  option:selected").val(),
-					u_gender : $(".u_gender").text(),
-					u_phone : $(".u_phone").text(),
-					u_age : $(".u_age").text(),
-					u_mail : $(".u_email").text()
+	$(function () {
+
+		var id = (getUrlParam("id") == null ? $.session.get("u_id") : getUrlParam("id"))
+		console.log("id", id)
+		$.ajax({
+			type: "post",
+			url: "/KnowledgeLibrary/user/viewUserInfo",
+			data: {
+				u_id: id
+			},
+			success: function (res) {
+				console.log(res)
+				$(".u_name").text(res.data.u_name)
+				$(".u_gender").text(res.data.u_gender)
+				$(".u_phone").text(res.data.u_phone)
+				console.log(res.data.u_role)
+				$(".u_role").val(res.data.u_role)
+				$(".u_age").text(res.data.u_age)
+				$(".u_email").text(res.data.u_email)
+			},
+			error: function (res) {
+				console.log(res)
+			}
+		})
+
+		$("#modify").click(function () {
+			$.ajax({
+				type: "POST",
+				url: "/KnowledgeLibrary/firm/modifyUserInfo",
+				data: {
+					u_id: id,
+					u_name: $(".u_name").text(),
+					u_role: $(".u_role  option:selected").val(),
+					u_gender: $(".u_gender").text(),
+					u_phone: $(".u_phone").text(),
+					u_age: $(".u_age").text(),
+					u_mail: $(".u_email").text()
 				},
-				success:function(res){
-					location.href = "user_changeUserInfo.html?id="+id;
+				success: function (res) {
+					location.href = "user_changeUserInfo.html?id=" + id;
 					console.log(res)
 				},
-				error : function(res){
+				error: function (res) {
 					console.log(res)
 				}
 			})
-		
-		})
-   
-  })
 
-	  
-  
+		})
+
+	})
+
+
+
 </script>
+
 </html>

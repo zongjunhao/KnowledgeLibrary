@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>mainPage</title>
 	<meta charset="utf-8" />
@@ -21,16 +21,17 @@
 	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1333406_ry0rxsfkhv.css">
 	<!-- 	监听页面窗口大小改变的插件 -->
 	<script type="text/javascript" src="lib/js/detect-element-resize.js"></script>
-	
+
 </head>
+
 <body>
 	<!-- 顶部导航条 -->
-	<nav id="book-top" class="navbar navbar-fixed-top header"  role="navigation">
+	<nav id="book-top" class="navbar navbar-fixed-top header" role="navigation">
 		<div class="container-fluid">
 			<!--标题-->
 			<div class="navbar-header">
 				<div class="media">
-					<div class="media-left">				
+					<div class="media-left">
 						<span class="iconfont icon-zhishikuguanli-"></span>
 					</div>
 					<div class="media-body">
@@ -38,153 +39,178 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="collapse navbar-collapse">
 				<div id="sideNav" class="nav navbar-nav navbar-left">
-					<span class="iconfont icon-menu2"></span>	
-		        </div>
-		        <ul class="nav navbar-nav navbar-right">
-		        	<li id="manageRole" data-toggle="tooltip" data-placement="left" title="知识管理员" >
-		        		<a id="name" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"  ><span class="iconfont icon-icon_xinyong_xianxing_jijin-"></span>  用户名  
-		        		<small><span class="iconfont icon-xiala"></span></small>
-		        		</a>
-		        		<ul class="book-dropmenu dropdown-menu"  aria-labelledby="dropdownMenu4">
-		        			<li><a target="main" class="userInfo"><span class="iconfont icon-icon_xinyong_xianxing_jijin-">  个人信息</span></a>
-		        			</li>
-		        			<li><a class="changeInfo" target="main"><span class="iconfont icon-icon_edit">  修改信息</span></a>
-		        			</li>
-		        		</ul>
-		        	</li>
-		        	<li id="logout" ><a >退出  <span  class="iconfont icon-tuichu"></span></a></li>
-		        </ul>
-		    </div>
-		</div>			
-    </nav>	
+					<span class="iconfont icon-menu2"></span>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="manageRole" data-toggle="tooltip" data-placement="left" title="知识管理员">
+						<a id="name" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span
+								class="iconfont icon-icon_xinyong_xianxing_jijin-"></span> 用户名
+							<small><span class="iconfont icon-xiala"></span></small>
+						</a>
+						<ul class="book-dropmenu dropdown-menu" aria-labelledby="dropdownMenu4">
+							<li><a target="main" class="userInfo"><span
+										class="iconfont icon-icon_xinyong_xianxing_jijin-"> 个人信息</span></a>
+							</li>
+							<li><a class="changeInfo" target="main"><span class="iconfont icon-icon_edit">
+										修改信息</span></a>
+							</li>
+						</ul>
+					</li>
+					<li id="logout"><a>退出 <span class="iconfont icon-tuichu"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<!-- /顶部导航条 -->
 
 	<!-- 左侧导航条 -->
 	<div id="book-left">
 		<nav class="navbar-default navbar-side " role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-                    <li class="l0 l2 l3 l4 l5 l6">
-                        <a href="knowledge_mainpage.jsp" target="main" class="selected" level="1"><span class="iconfont icon-shouye1" >  首頁</span></a>
-                    </li>
-                    <li class="l0 l1">
-                        <a target="main" level="1"><span class="iconfont icon-qiye">  公司管理<span class="iconfont icon-zuojiantou arrow" ></span></span></a>
-                        <ul class="nav nav-second-level">
-                        	<li>
-                                <a href="admin_mainpage.jsp" target="main" level="2"><span class="iconfont icon-shenhe">  公司审核</span></a>
-                            </li>
-                            <li>
-                                <a href="admin_companylist.jsp" target="main" level="2"><span class="iconfont icon-qiyeyewu">  公司列表</span></a>
-                            </li>
-                            <li>
-                                <a href="admin_notify.jsp" target="main" level="2"><span class="iconfont icon-tongzhi">  发送通知</span></a>
-                            </li>
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
+					<li class="l0 l2 l3 l4 l5 l6">
+						<a href="knowledge_mainpage.jsp" target="main" class="selected" level="1"><span
+								class="iconfont icon-shouye1"> 首页</span></a>
+					</li>
+					<li class="l0 l1">
+						<a target="main" level="1"><span class="iconfont icon-qiye"> 公司管理<span
+									class="iconfont icon-zuojiantou arrow"></span></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="admin_mainpage.jsp" target="main" level="2"><span class="iconfont icon-shenhe">
+										公司审核</span></a>
+							</li>
+							<li>
+								<a href="admin_companylist.jsp" target="main" level="2"><span
+										class="iconfont icon-qiyeyewu"> 公司列表</span></a>
+							</li>
+							<li>
+								<a href="admin_notify.jsp" target="main" level="2"><span class="iconfont icon-tongzhi">
+										发送通知</span></a>
+							</li>
 						</ul>
-                    </li>
-                    <li class="l0 l3 l5 l6">
-                        <a target="main" level="1"><span class="iconfont icon-yonghuguanli">  用戶管理<span class="iconfont icon-zuojiantou arrow" ></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="userlist.jsp" target="main" level="2"><span class="iconfont icon-yuangongguanli">  用户列表</span></a>
-                            </li>
-                            <li>
-                                <a href="user_add.html" target="main" level="2"><span class="iconfont icon-addfollow">  添加用户</span></a>
-                            </li>
+					</li>
+					<li class="l0 l3 l5 l6">
+						<a target="main" level="1"><span class="iconfont icon-yonghuguanli"> 用户管理<span
+									class="iconfont icon-zuojiantou arrow"></span></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="userlist.jsp" target="main" level="2"><span
+										class="iconfont icon-yuangongguanli"> 用户列表</span></a>
+							</li>
+							<li>
+								<a href="user_add.html" target="main" level="2"><span class="iconfont icon-addfollow">
+										添加用户</span></a>
+							</li>
 						</ul>
-                    </li>
-                    <li class="l0 l4 l5 l6">
-                        <a level="1"><span class="iconfont icon-zhishiku">  知识管理<span class="iconfont icon-zuojiantou arrow" ></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="user_knowledgeManage.jsp" target="main" level="2"><span class="iconfont icon-shenhe">  审核知识</span></a>
-                            </li>
-                            <li>
-                                <a href="user_labelManage.jsp" target="main" level="2"><span class="iconfont icon-biaoqian1">  标签管理</span></a>
-                            </li>
+					</li>
+					<li class="l0 l4 l5 l6">
+						<a level="1"><span class="iconfont icon-zhishiku"> 知识管理<span
+									class="iconfont icon-zuojiantou arrow"></span></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="user_knowledgeManage.jsp" target="main" level="2"><span
+										class="iconfont icon-shenhe"> 审核知识</span></a>
+							</li>
+							<li>
+								<a href="user_labelManage.jsp" target="main" level="2"><span
+										class="iconfont icon-biaoqian1"> 标签管理</span></a>
+							</li>
 						</ul>
-                    </li>  
-					 <li class="l0 l2 l3 l4 l5 l6">
-                        <a level="1"><span class="iconfont icon-gerenxinxi">  个人中心<span class="iconfont icon-zuojiantou arrow" ></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="user_myKnowledge.jsp" target="main" level="2"><span class="iconfont icon-zhishi">  我的知识</span></a>
-                            </li>
-                            <li>
-                                <a href="user_collection.jsp" target="main" level="2"><span class="iconfont icon-icon-test">  我的收藏</span></a>
-                            </li>
+					</li>
+					<li class="l0 l2 l3 l4 l5 l6">
+						<a level="1"><span class="iconfont icon-gerenxinxi"> 个人中心<span
+									class="iconfont icon-zuojiantou arrow"></span></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="user_myKnowledge.jsp" target="main" level="2"><span
+										class="iconfont icon-zhishi"> 我的知识</span></a>
+							</li>
+							<li>
+								<a href="user_collection.jsp" target="main" level="2"><span
+										class="iconfont icon-icon-test"> 我的收藏</span></a>
+							</li>
 						</ul>
 					</li>
 					<li class="l0 l6">
-                        <a level="1"><span class="iconfont icon-qiye">  公司信息<span class="iconfont icon-zuojiantou arrow" ></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="company_info.jsp" target="main" level="2"><span class="iconfont icon-zhishi">  公司信息</span></a>
-                            </li>
-                            <li>
-                                <a href="company_changeInfo.jsp" target="main" level="2"><span class="iconfont icon-icon-test">  修改公司信息</span></a>
-                            </li>
+						<a level="1"><span class="iconfont icon-qiye"> 公司信息<span
+									class="iconfont icon-zuojiantou arrow"></span></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="company_info.jsp" target="main" level="2"><span class="iconfont icon-zhishi">
+										公司信息</span></a>
+							</li>
+							<li>
+								<a href="company_changeInfo.jsp" target="main" level="2"><span
+										class="iconfont icon-icon-test"> 修改公司信息</span></a>
+							</li>
 						</ul>
-					</li>	  
-                </ul>
-            </div>
-        </nav>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	</div>
 	<!-- /左侧导航条 -->
 
 	<!-- 页面主内容 -->
 	<div id="book-main">
 		<!-- 导航条 -->
-		<div class="header"> 
+		<div class="header">
 			<h1 class="page-header">首页</h1>
 			<ol class="breadcrumb">
 				<li><a href="#">首页</a></li>
 				<li class="active">首页</li>
-			</ol> 						
+			</ol>
 		</div>
 		<!-- 页面主内容 -->
-		<iframe name="main" src="mainPage.html" width="100%" id="myiframe"  scrolling="no" frameborder="0"></iframe>
+		<!-- <iframe name="main" src="mainPage.html" width="100%" id="myiframe"  scrolling="no" frameborder="0"></iframe> -->
+		<div class="embed-responsive embed-responsive-16by9">
+			<!-- <iframe name="main" src="mainPage.html" width="100%" id="myiframe" class="embed-responsive-item"
+				frameborder="0"></iframe> -->
+			<iframe id='myiframe' class="embed-responsive-item" name="main" src="mainPage.html"></iframe>
+		</div>
 		<!-- 页尾 navbar-fixed-bottom -->
 		<footer class="footer ">
 			<div class="container">
 				<p class="text-center">Copyright © 企业知识库管理系统</p>
-    		</div>
-			
+			</div>
+
 		</footer>
 	</div>
 	<!-- /页面主内容 -->
 </body>
 <script type="text/javascript">
 	var interval = setInterval("checkSession()", 1000 * 60 * 30);
-	var logout=[["/KnowledgeLibrary/sysAdmin/logout","a_account","admin_login.jsp"],["/KnowledgeLibrary/user/logout","u_mail","user_login.jsp"]]
+	var logout = [["/KnowledgeLibrary/sysAdmin/logout", "a_account", "admin_login.jsp"], ["/KnowledgeLibrary/user/logout", "u_mail", "user_login.jsp"]]
 	var role = $.session.get("role")
-	var url,id;
-	$(document).ready(function (){
-        //监听子页面大小变化，设置父页面的iframe的大小
-        console.log("index")
-        addResizeListener(document.getElementsByTagName("body")[0],function(){
-            console.log("index body change")
-            console.log("iframe",$("#myiframe").height())
-            if($("#myiframe").height()<355){
-            	document.getElementById("myiframe").height="355";
-            	//$("#myiframe").css({"height":"355px"})//height(355);
-            	console.log($("#myiframe").height())
-            }else{
-            }
-            
-        });
-    });
-		
-	$(function() {
-		
+	var url, id;
+	// $(document).ready(function () {
+	// 	//监听子页面大小变化，设置父页面的iframe的大小
+	// 	console.log("index")
+	// 	addResizeListener(document.getElementsByTagName("body")[0], function () {
+	// 		console.log("index body change")
+	// 		console.log("iframe", $("#myiframe").height())
+	// 		if ($("#myiframe").height() < 355) {
+	// 			document.getElementById("myiframe").height = "355";
+	// 			//$("#myiframe").css({"height":"355px"})//height(355);
+	// 			console.log($("#myiframe").height())
+	// 		} else {
+	// 		}
+
+	// 	});
+	// });
+
+	$(function () {
+
 		//初始化,设置退出时的url和退出时的地址
-		init()		
-		
+		init()
+
 		//每隔半个小时判断session有没有失效，如果失效则要求用户重新登陆
 		checkSession()
-				
+
 		//console.log(url,returnLocation)
 
 		$('[data-toggle="tooltip"]').tooltip()
@@ -192,69 +218,69 @@
 		$('#main-menu').metisMenu();
 
 		//添加收起左侧导航栏功能
-		$("#sideNav").click(function(){
-			if($(this).hasClass('closed')){
-				$('.navbar-side').animate({left: '0px'});
+		$("#sideNav").click(function () {
+			if ($(this).hasClass('closed')) {
+				$('.navbar-side').animate({ left: '0px' });
 				$(this).removeClass('closed');
-				$('#book-main').animate({'margin-left' : '260px'});
+				$('#book-main').animate({ 'margin-left': '260px' });
 			}
-			else{
-			    $(this).addClass('closed');
-				$('.navbar-side').animate({left: '-260px'});
-				$('#book-main').animate({'margin-left' : '0px'}); 
+			else {
+				$(this).addClass('closed');
+				$('.navbar-side').animate({ left: '-260px' });
+				$('#book-main').animate({ 'margin-left': '0px' });
 			}
-		});	 
+		});
 
 		//给上方导航栏添加跳转信息
-		$(".book-dropmenu a").click(function(){
+		$(".book-dropmenu a").click(function () {
 			$("#book-main .header h1").text($(this).text());
 			$("#book-main .header .breadcrumb").html("<li><a>首页</a></li>");
 			$("#book-main .header .breadcrumb").append("<li><a href=''>个人中心</a></li>");
-			$("#book-main .header .breadcrumb").append("<li class='active'>"+$(this).text()+"</li>")
+			$("#book-main .header .breadcrumb").append("<li class='active'>" + $(this).text() + "</li>")
 		})
 
 		//添加左侧导航栏的选择效果
-		$("#book-left .navbar-side ul li a").click(function(){
+		$("#book-left .navbar-side ul li a").click(function () {
 			//先去掉selected类
 			$("#book-left .navbar-side ul li a").removeClass("selected");
 			//再给选择的导航栏添加特效
 			//console.log($("#book-left .navbar-side ul li a"))
 			$("#book-main .header .breadcrumb").html("<li><a>首页</a></li>");
 			$("#book-main .header h1").text($(this).text());
-			if($(this).attr("level")=="1"){	
-				$("#book-main .header .breadcrumb").append("<li class='active'>"+$(this).text()+"</li>")
-			}else{
-				$("#book-main .header .breadcrumb").append("<li><a href=''>"+$(this).parents("li").eq(1).children("a").text()+"</a></li>")
-				$("#book-main .header .breadcrumb").append("<li class='active'>"+$(this).text()+"</li>")
+			if ($(this).attr("level") == "1") {
+				$("#book-main .header .breadcrumb").append("<li class='active'>" + $(this).text() + "</li>")
+			} else {
+				$("#book-main .header .breadcrumb").append("<li><a href=''>" + $(this).parents("li").eq(1).children("a").text() + "</a></li>")
+				$("#book-main .header .breadcrumb").append("<li class='active'>" + $(this).text() + "</li>")
 			}
 			console.log($(this).attr("level"))
 			$(this).addClass("selected")
-			
+
 		})
-		
-		$("#logout").click(function(){
+
+		$("#logout").click(function () {
 			logOut()
 		})
-		
-		
-		
-		
+
+
+
+
 
 	})
-	
+
 	//初始化
-	function init(){
+	function init() {
 		$("#book-left .navbar-side ul .l0").hide()
-		
-		if(role == "1") {// 1是系统管理员
-			url = logout[0][0]+"?"+logout[0][1]+"="+$.session.get("a_account");
+
+		if (role == "1") {// 1是系统管理员
+			url = logout[0][0] + "?" + logout[0][1] + "=" + $.session.get("a_account");
 			id = $.session.get("a_id");
-			$("#manageRole").attr("title","系统管理员");
-			$("#myiframe").attr("src","admin_mainpage.jsp");
+			$("#manageRole").attr("title", "系统管理员");
+			$("#myiframe").attr("src", "admin_mainpage.jsp");
 			$("#book-left .navbar-side ul .l1").show()
 			$("#name").text($.session.get("a_account"))
-			$(".userInfo").attr("href","admin_info.jsp")
-			$(".changeInfo").attr("href","admin_changeInfo.jsp")
+			$(".userInfo").attr("href", "admin_info.jsp")
+			$(".changeInfo").attr("href", "admin_changeInfo.jsp")
 		}
 		/* else if (role == "2") {// 2是公司管理员
 			url = logout[1][0]+"?"+logout[1][1]+"="+$.session.get("f_mail");
@@ -267,66 +293,67 @@
 			$(".changeInfo").attr("href","company_changeInfo.jsp")
 		} */
 		else { //2 3 4 5 6 是公司用户
-			url = logout[1][0]+"?"+logout[1][1]+"="+$.session.get("u_mail");
+			url = logout[1][0] + "?" + logout[1][1] + "=" + $.session.get("u_mail");
 			id = $.session.get("u_id");
 			$("#name").text($.session.get("u_name"))
-			$("#myiframe").attr("src","knowledge_mainpage.jsp");
-			$(".userInfo").attr("href","user_info.jsp")
-			$(".changeInfo").attr("href","user_changeInfo.jsp")
-			if(role == "2"){ // 3是普通用户
-				$("#manageRole").attr("title","普通用户");
+			$("#myiframe").attr("src", "knowledge_mainpage.jsp");
+			$(".userInfo").attr("href", "user_info.jsp")
+			$(".changeInfo").attr("href", "user_changeInfo.jsp")
+			if (role == "2") { // 3是普通用户
+				$("#manageRole").attr("title", "普通用户");
 				$("#book-left .navbar-side ul .l2").show()
-			} else if(role == "3"){// 3是用户管理员
-				$("#manageRole").attr("title","用户管理员");
+			} else if (role == "3") {// 3是用户管理员
+				$("#manageRole").attr("title", "用户管理员");
 				$("#book-left .navbar-side ul .l3").show()
-			} else if(role == "4"){// 4是知识管理员
-				$("#manageRole").attr("title","知识管理员");
+			} else if (role == "4") {// 4是知识管理员
+				$("#manageRole").attr("title", "知识管理员");
 				$("#book-left .navbar-side ul .l4").show()
-			} else if(role == "5"){// 5是超级管理员
-				$("#manageRole").attr("title","超级管理员");
+			} else if (role == "5") {// 5是超级管理员
+				$("#manageRole").attr("title", "超级管理员");
 				$("#book-left .navbar-side ul .l5").show()
 			} else {// 6是公司管理员
-				$("#manageRole").attr("title","公司管理员");
+				$("#manageRole").attr("title", "公司管理员");
 				$("#book-left .navbar-side ul .l6").show()
 			}
-			
+
 		}
 	}
-	
+
 	//退出登陆
-	function logOut(){
+	function logOut() {
 		console.log("logout")
-		 $.ajax({
-			  type:"GET",
-			  url:url,
-			  success:function(res){
-				  //console.log(returnLocation)
-				  if(res.resultCode=="4004"){
-					  $.session.clear();				  
-					  location.href="login.html";
-				  }else if(res.resultCode=="4005"){
-					  //alert("退出登陆失败，用户未登录");
-					  //$.session.clear();
-					  location.href="login.html";
-				  }else alert(res.resultCode);
-			  },
-			  error:function(res){
-				  alert("请求的页面有错");
-			  }
-		  });
-		 
+		$.ajax({
+			type: "GET",
+			url: url,
+			success: function (res) {
+				//console.log(returnLocation)
+				if (res.resultCode == "4004") {
+					$.session.clear();
+					location.href = "login.html";
+				} else if (res.resultCode == "4005") {
+					//alert("退出登陆失败，用户未登录");
+					//$.session.clear();
+					location.href = "login.html";
+				} else alert(res.resultCode);
+			},
+			error: function (res) {
+				alert("请求的页面有错");
+			}
+		});
+
 	}
 
-	
+
 	//检查session信息，失效了要求重新登陆
 	function checkSession() {
-		console.log("id",id)
+		console.log("id", id)
 		if (id == null) {
 			alert("请先登陆！")
 			location.href = "login.html";
 		}
 	}
 
-	
+
 </script>
+
 </html>
