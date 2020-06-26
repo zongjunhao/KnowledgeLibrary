@@ -6,5 +6,5 @@ public class Constant {
 	public static final String SMTPHOST = "smtp.qq.com";
 	public static final String MAILPORT = "587";
 	public static final String MAILNAME = "1016767058@qq.com";
-	public static final String MAILPSW = "sxfgtjfjzgazbche";
+	public static final String MAILPSW = "mtojetqnuhnhbdfh";
 }

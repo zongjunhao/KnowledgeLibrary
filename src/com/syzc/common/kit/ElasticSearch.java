@@ -39,7 +39,7 @@ public class ElasticSearch {
 	public ElasticSearch() {
 		try {
 			TransportClient client = new PreBuiltTransportClient(Settings.EMPTY)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("106.15.251.188"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), 9300));
 			this.client = client;
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
